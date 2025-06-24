@@ -155,11 +155,6 @@ npm run dev
 [GitHub](https://github.com/Shreya904)
 [LinkedIn](https://www.linkedin.com/in/shreya-srivastava-2b11b225b/)
 
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
