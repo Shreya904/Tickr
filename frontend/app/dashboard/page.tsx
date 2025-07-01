@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { jwtDecode } from "jwt-decode";
 import { ExpandableCardDemo } from "../../components/ExpandableCardDemo";
@@ -87,12 +88,13 @@ export default function DashboardPage() {
     <div className="px-4 sm:px-6 md:px-8 py-8">
       {/* Profile Section */}
       <div className="mb-6 mx-auto max-w-3xl p-5 rounded-xl bg-white/10 backdrop-blur-lg shadow-md flex items-center gap-4 border border-white/20">
-        {/* Avatar */}
-        <img
+        <Image
           src={`https://www.gravatar.com/avatar/${md5(
             user?.email || ""
           )}?d=identicon&s=64`}
           alt="User Avatar"
+          width={56}
+          height={56}
           className="w-14 h-14 rounded-full border-2 border-white/20 shadow-sm"
         />
 

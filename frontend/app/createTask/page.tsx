@@ -33,7 +33,6 @@ export default function CreateTaskForm() {
 
     // Dynamically import and initialize Flowbite Datepicker
     import("flowbite").then((flowbite) => {
-      // @ts-expect-error: flowbite types are not available
       const Datepicker =
         flowbite?.Datepicker ||
         (flowbite?.default && flowbite.default.Datepicker);

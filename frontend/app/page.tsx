@@ -109,8 +109,8 @@ export default function HomePage() {
                 Built for productivity lovers
               </h2>
               <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
-                Whether you're a student, creator, or developer — Tickr keeps
-                your daily goals within reach.
+                Whether you&#39;re a student, creator, or developer — Tickr
+                keeps your daily goals within reach.
               </p>
             </div>
             <div className="absolute right-2 bottom-2 w-5/6 sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-[60%] max-w-[400px]">
