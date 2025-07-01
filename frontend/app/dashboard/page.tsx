@@ -46,7 +46,7 @@ export default function DashboardPage() {
       if (!token) return;
 
       try {
-        const res = await fetch("http://localhost:5000/api/tasks", {
+        const res = await fetch("https://tickr-z2vp.onrender.com/api/tasks", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

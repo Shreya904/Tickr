@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // ✅ change this later if needed (e.g., to your Vercel frontend URL)
+    origin: "tickr-omega.vercel.app",
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
   })
