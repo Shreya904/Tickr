@@ -64,14 +64,17 @@ export function ExpandableCardDemo({ tasks, setTasks }: Props) {
     if (!token) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/tasks/${taskId}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ status: newStatus }),
-      });
+      const res = await fetch(
+        `https://tickr-z2vp.onrender.com/api/tasks/${taskId}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ status: newStatus }),
+        }
+      );
 
       if (!res.ok) throw new Error("Failed to update status");
       setTasks((prev) =>
@@ -91,18 +94,21 @@ export function ExpandableCardDemo({ tasks, setTasks }: Props) {
     if (!token) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/tasks/${active.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          title: editTitle,
-          description: editDescription,
-          status: active.status,
-        }),
-      });
+      const res = await fetch(
+        `https://tickr-z2vp.onrender.com/api/tasks/${active.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            title: editTitle,
+            description: editDescription,
+            status: active.status,
+          }),
+        }
+      );
 
       if (!res.ok) throw new Error("Failed to update task");
       const { task: updatedTask } = await res.json();
@@ -122,10 +128,13 @@ export function ExpandableCardDemo({ tasks, setTasks }: Props) {
     if (!token) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/tasks/${active.id}`, {
-        method: "DELETE",
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await fetch(
+        `https://tickr-z2vp.onrender.com/api/tasks/${active.id}`,
+        {
+          method: "DELETE",
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
       if (!res.ok) throw new Error("Failed to delete task");
       setTasks((prev) => prev.filter((t) => t.id !== active.id));
