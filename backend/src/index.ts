@@ -8,18 +8,22 @@ import taskRoutes from "./routes/tasks";
 dotenv.config();
 
 const app = express();
+
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3000", // ✅ change this later if needed (e.g., to your Vercel frontend URL)
     credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization"], // ✅ Important
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-app.use(express.json()); // VERY IMPORTANT for req.body to work
 
-app.use("/api/auth", authRoutes); // use the router
+app.use(express.json());
+
+app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
-app.listen(5000, () => {
-  console.log("Server is running on http://localhost:5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
