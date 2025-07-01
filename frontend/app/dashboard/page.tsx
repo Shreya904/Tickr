@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { jwtDecode } from "jwt-decode";
 import { ExpandableCardDemo } from "../../components/ExpandableCardDemo";
 import md5 from "md5"; // ⬅️ Make sure you ran: `npm install md5`
+import type { Task } from "../../types/task"; // adjust path as needed
 
 // Types
 type DecodedToken = {
@@ -14,15 +15,6 @@ type DecodedToken = {
   userid: string;
   exp: number;
   iat: number;
-};
-
-type Task = {
-  id: string;
-  title: string;
-  description?: string;
-  status?: string;
-  deadline?: string;
-  category?: string;
 };
 
 export default function DashboardPage() {

@@ -3,16 +3,9 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "../hooks/outsideclicks";
+import type { Task } from "../types/task";
 
-type Task = {
-  id: string;
-  title: string;
-  description: string;
-  image?: string;
-  status: "pending" | "in-progress" | "completed";
-  content?: string | React.ReactNode | (() => React.ReactNode);
-};
-
+// ✅ Define props type
 type Props = {
   tasks: Task[];
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
