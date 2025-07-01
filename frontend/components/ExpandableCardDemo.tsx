@@ -31,8 +31,8 @@ export function ExpandableCardDemo({ tasks, setTasks }: Props) {
 
   useEffect(() => {
     if (active) {
-      setEditTitle(active.title);
-      setEditDescription(active.description);
+      setEditTitle(active.title ?? ""); // 👈 fix: fallback to ""
+      setEditDescription(active.description ?? ""); // 👈 same here
     }
   }, [active]);
 
