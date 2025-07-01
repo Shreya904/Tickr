@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { jwtDecode } from "jwt-decode";
 import { ExpandableCardDemo } from "../../components/ExpandableCardDemo";
+import md5 from "md5"; // ⬅️ Make sure you ran: `npm install md5`
 
 // Types
-
 type DecodedToken = {
   email: string;
   username?: string;
@@ -86,19 +86,32 @@ export default function DashboardPage() {
   return (
     <div className="px-4 sm:px-6 md:px-8 py-8">
       {/* Profile Section */}
-      <div className="mb-6 mx-auto max-w-3xl p-4 border border-white/10 rounded-lg bg-white/5 text-white flex justify-between items-center">
-        <div>
-          <p className="text-sm text-neutral-400">Logged in as:</p>
-          <h3 className="text-lg font-semibold">
-            {user?.username ?? "User"} ({user?.email})
+      <div className="mb-6 mx-auto max-w-3xl p-5 rounded-xl bg-white/10 backdrop-blur-lg shadow-md flex items-center gap-4 border border-white/20">
+        {/* Avatar */}
+        <img
+          src={`https://www.gravatar.com/avatar/${md5(
+            user?.email || ""
+          )}?d=identicon&s=64`}
+          alt="User Avatar"
+          className="w-14 h-14 rounded-full border-2 border-white/20 shadow-sm"
+        />
+
+        {/* User Info */}
+        <div className="flex-1">
+          <p className="text-sm text-neutral-300">Welcome back,</p>
+          <h3 className="text-lg font-semibold text-white">
+            {user?.username ?? "User"}
           </h3>
+          <p className="text-sm text-neutral-400">{user?.email}</p>
         </div>
+
+        {/* Logout Button */}
         <button
           onClick={() => {
             localStorage.removeItem("token");
             router.push("/");
           }}
-          className="text-sm bg-red-500 hover:bg-red-600 px-3 py-1 rounded"
+          className="text-sm bg-red-500 hover:bg-red-600 px-4 py-2 rounded-md text-white"
         >
           Logout
         </button>
