@@ -18,6 +18,9 @@ Tickr helps users organize their day by creating, updating, and managing tasks w
 - 📦 Proper file structure for frontend and backend separation
 
 ---
+## 🖼️ Screenshot
+
+![Tickr Homepage](./homepage.png)
 
 
 ## 🏗️ Tech Stack
