@@ -15,9 +15,6 @@ Tickr helps users organize their day by creating, updating, and managing tasks w
 - 🎨 **Animated UI**
   - Expandable card modal to show task details and controls
   - Tailwind + Framer Motion for modern UX
-- 🗂️ **Task Categories** (optional)
-- 📆 **Deadline support**
-- ☁️ **Full-stack deployment ready**
 - 📦 Proper file structure for frontend and backend separation
 
 ---
@@ -32,7 +29,7 @@ Tickr helps users organize their day by creating, updating, and managing tasks w
 | Auth        | JWT (stored in `localStorage`)                   |
 | Backend     | Express.js, Prisma ORM, TypeScript               |
 | Database    | PostgreSQL (via Prisma)                          |
-| Hosting     | Vercel (frontend), Render/Fly.io/Other (backend) |
+| Hosting     | Vercel(frontend), Render(backend), Supabase(db)  |
 
 ---
 
